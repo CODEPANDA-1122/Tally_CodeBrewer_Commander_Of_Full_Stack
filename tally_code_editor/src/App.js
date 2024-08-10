@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './screens/Home';
+import Coding from './screens/Coding'
+import Playground from './screens/Playground';
+import Error404 from './screens/Error404';
+import { GlobalStyle } from './style/global';
+import ModalProvider from './context/ModalContext';
+import PlaygroundProvider from './context/PlaygroundContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PlaygroundProvider>
+      <ModalProvider>
+        <BrowserRouter>
+          <GlobalStyle />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            
+            <Route
+              path="/playground/:folderId/:playgroundId"
+              element={<Playground />}
+            />
+            <Route path="/error" element={<Coding />}/>
+            
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </BrowserRouter>
+      </ModalProvider>
+    </PlaygroundProvider>
   );
 }
 
