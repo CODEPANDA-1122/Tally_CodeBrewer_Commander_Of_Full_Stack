@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Tally CodeBrewer Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo
 
-## Available Scripts
+[Live Project Link](#) *(Replace with actual link)*
 
-In the project directory, you can run:
+## Project Objective
 
-### `npm start`
+The **Tally CodeBrewer Editor** is a versatile online IDE designed to enhance coding productivity and practice. This project aims to provide a feature-rich code playground that supports multiple programming languages, themes, and functionalities. Key features include:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Playground Area:** Create and manage multiple code snippets.
+- **Online Compiler:** Execute code snippets using Judge0 API.
+- **Code Editor:** Frontend developed using ReactJS with the CodeMirror package.
+- **Flexible Layout:** Implemented using styled components.
+- **Multi-Language Support:** Includes C++, Python, Java, and JavaScript.
+- **Multi-Theme Support:** Customizable themes for the editor.
+- **File Management:** Upload and download code, input, and output files.
+- **Local Storage:** Save multiple playgrounds locally.
+- **Fullscreen Support:** Expand the editor to full screen for a better coding experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React JS:** For building the frontend.
+- **Styled Components:** For styling the components.
+- **Judge0 CE API:** To handle code compilation and execution.
+- **Rapid API:** To set up and manage the Judge0 CE API.
+- **Axios:** For making API calls.
+- **React Router:** For handling routing within the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To set up the project locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the Repository**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    git clone https://github.com/yourusername/tally-codebrewer-editor.git
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Navigate to the Project Directory**
 
-### `npm run eject`
+    ```bash
+    cd tally-codebrewer-editor
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Install Dependencies**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Run the Development Server**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    ```bash
+    npm start
+    ```
 
-## Learn More
+   This will start the development server and open the application in your default web browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Links & References
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Judge0 CE API Testing](https://rapidapi.com/endpoint) *(Replace with actual link)*
+- [Judge0 CE API Documentation](https://docs.judge0.com/) *(Replace with actual link)*
+- [Styled Components Documentation](https://styled-components.com/docs) *(Replace with actual link)*
+- [CodeMirror Documentation](https://codemirror.net/) *(Replace with actual link)*
+- [Vercel](https://vercel.com/) *(For hosting)*
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+If you would like to contribute to the project, please follow these steps:
 
-### Analyzing the Bundle Size
+1. **Fork the Repository**
+2. **Create a Feature Branch**
+3. **Commit Your Changes**
+4. **Push to the Branch**
+5. **Create a Pull Request**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
