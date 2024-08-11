@@ -20,7 +20,7 @@ function App() {
               path="/playground/:folderId/:playgroundId"
               element={<Playground />}
             />
-            
+            <Route path="/codingArena" element={<Coding/>}/>
             <Route path="*" element={<Error404 />} />
           </Routes>
         </BrowserRouter>
