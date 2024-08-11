@@ -9,6 +9,8 @@ export const Console = styled.div`
 
 export const Header = styled.div`
   background: #ededed;
+  color:#283618;
+  background-color: #0077b6;
   height: 4rem;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.16);
   padding: 0 1rem;
@@ -35,6 +37,7 @@ export const TextArea = styled.textarea`
   resize: none;
   border: 0;
   outline: 0;
+  background-color:#ade8f4;
   padding: 0.25rem;
   padding-top: 0.5rem;
   font-size: 1.1rem;

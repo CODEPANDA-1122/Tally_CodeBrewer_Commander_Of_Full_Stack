@@ -14,6 +14,7 @@ const StyledRightComponent = styled.div`
     right: 0;
     width: 60%;
     padding: 2rem;
+    
 
     @media (max-width: 768px){
         position: relative;
@@ -75,7 +76,7 @@ const PlayGroundCards = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-
+    
     @media (max-width: 428px){
         grid-template-columns: 1fr;
     }    
@@ -90,7 +91,7 @@ const Card = styled.div`
     box-shadow: 0 0 4px 0px #989898;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-
+   
     &:hover{
       scale: 1.05;
       box-shadow: 0 0 8px 0px #989898;
@@ -124,7 +125,7 @@ const RightComponent = () => {
     <StyledRightComponent>
       <Header>
         <Heading size="large">
-          My <span>Playground</span>
+          My Coding <span>Playground</span>
         </Heading>
         <AddButton onClick={() => openModal({
           show: true,
@@ -160,7 +161,7 @@ const RightComponent = () => {
                     folderId: folderId,
                     cardId: "",
                   }
-                })}><span>+</span> New Playground</AddButton>
+                })}><span>+</span> New Coding Playground</AddButton>
               </FolderIcons>
             </Header>
 

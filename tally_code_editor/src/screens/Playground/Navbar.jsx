@@ -13,7 +13,9 @@ const NavbarContainer = styled.div`
 const NavbarContent = styled.button`
   background: transparent;
   border: 0;
-
+  border-radius:20px;
+  padding-right:20px;
+  background-color:#0081a7;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -22,6 +24,7 @@ const NavbarContent = styled.button`
 
 const Logo = styled.img`
   width: 60px;
+  border-radius:12px;
 `
 
 const MainHeading = styled.h1`
@@ -43,7 +46,7 @@ const Navbar = ({ isFullScreen }) => {
       }}>
         <Logo src={logo} />
         <MainHeading>
-          <span>Code</span> Deck
+          <span>Tally_CodeBrewer</span> Code_Editor
         </MainHeading>
       </NavbarContent>
     </NavbarContainer>

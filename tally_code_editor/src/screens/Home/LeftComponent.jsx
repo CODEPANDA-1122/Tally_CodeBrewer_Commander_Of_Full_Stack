@@ -9,7 +9,7 @@ const StyledLeftComponent = styled.div`
     left: 0;
     width: 40%;
     height: 100vh;
-    background-color: #1e1e1e;
+    background-color: #222A68;
 
     display: flex;
     justify-content: center;
@@ -27,12 +27,14 @@ const ContentContainer = styled.div`
 const Logo = styled.img`
     width: 165px;
     margin-bottom: 1rem;
+    border-radius:40px;
+   
 `
 
 const MainHeading = styled.h1`
     font-size: 2.5rem;
     font-weight: 400;
-    color: #fff;
+    color: #adeee3;
     margin-bottom: 0.75rem;
 
     span{
@@ -50,6 +52,7 @@ const AddNewButton = styled.button`
     padding: 0.25rem 1.5rem;
     font-size: 1rem;
     border: none;
+    color:#04151F;
     border-radius: 30px;
     box-shadow: 0px 0px 4px 2px #8b8b8b;
     display: flex;
@@ -82,7 +85,7 @@ const LeftComponent = () => {
                         folderId: "",
                         cardId: "",
                     }
-                })} ><span>+</span> Create New Playground</AddNewButton>
+                })} ><span>+</span> Create New Coding Playground</AddNewButton>
             </ContentContainer>
         </StyledLeftComponent>
     )
