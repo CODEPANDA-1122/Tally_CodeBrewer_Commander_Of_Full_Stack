@@ -75,6 +75,3 @@ If you would like to contribute to the project, please follow these steps:
 4. **Push to the Branch**
 5. **Create a Pull Request**
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
