@@ -2,7 +2,7 @@
 
 ## Demo
 
-[Live Project Link](#) *(Replace with actual link)*
+[Live Project Link](#) *((https://tally-code-brewer-commander-of-full-stack-g3au.vercel.app/))*
 
 ## Project Objective
 
