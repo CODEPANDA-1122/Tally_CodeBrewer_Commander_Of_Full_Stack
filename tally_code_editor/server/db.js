@@ -1,19 +1,16 @@
+
 const mongoose = require("mongoose");
-require("dotenv").config(); // Load environment variables
 
 const connectDB = async () => {
   try {
-    const mongoURI = 'mongodb://localhost:27017/mydatabase';
-    if (!mongoURI) {
-      throw new Error("MONGO_URI not defined in .env file");
-    }
-    await mongoose.connect(mongoURI, {
-      // No need for useNewUrlParser and useUnifiedTopology options
+    await mongoose.connect("mongodb://localhost:27017/mydatabase", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
-    console.log("MongoDB connected successfully");
+    console.log("MongoDB connected");
   } catch (err) {
-    console.error("MongoDB connection error:", err);
-    process.exit(1); // Exit process with failure
+    console.error(err.message);
+    process.exit(1);
   }
 };
 

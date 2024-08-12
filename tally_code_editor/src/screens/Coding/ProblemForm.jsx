@@ -1,14 +1,15 @@
-// ProblemForm.jsx
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
+// Styled components for enhanced UI
 const FormContainer = styled.div`
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background: #f9f9f9;
+  background: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 `;
 
 const FormTitle = styled.h2`
@@ -24,52 +25,84 @@ const FormGroup = styled.div`
 const Label = styled.label`
   display: block;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   color: #555;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #0077b6;
+    outline: none;
+  }
 `;
 
 const TextArea = styled.textarea`
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
   resize: vertical;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #0077b6;
+    outline: none;
+  }
 `;
 
 const Select = styled.select`
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  background: #ffffff;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #0077b6;
+    outline: none;
+  }
 `;
 
 const Button = styled.button`
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 4px;
-  background: #0077b6;
+  background: #4cc9f0;
   color: white;
   font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
+  transition: background-color 0.3s ease;
 
   &:hover {
-    background: #005f8c;
+    background: #55a630;
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
   }
 `;
 
+const ErrorMessage = styled.p`
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 10px;
+`;
+
+// ProblemForm Component
 const ProblemForm = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -77,18 +110,37 @@ const ProblemForm = () => {
   const [inputExample, setInputExample] = useState('');
   const [outputExample, setOutputExample] = useState('');
   const [difficulty, setDifficulty] = useState('Easy');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic
-    console.log({
+    setError('');
+    setLoading(true);
+    const newProblem = {
       title,
       description,
       constraints,
       inputExample,
       outputExample,
       difficulty,
-    });
+    };
+
+    try {
+      await axios.post('http://localhost:5000/api/problems', newProblem);
+      alert('Problem added successfully');
+      setTitle('');
+      setDescription('');
+      setConstraints('');
+      setInputExample('');
+      setOutputExample('');
+      setDifficulty('Easy');
+    } catch (error) {
+      setError('Error adding problem. Please try again.');
+      console.error('Error adding problem', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -148,7 +200,7 @@ const ProblemForm = () => {
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="difficulty">Difficulty Level</Label>
+          <Label htmlFor="difficulty" >Difficulty Level</Label>
           <Select
             id="difficulty"
             value={difficulty}
@@ -160,7 +212,11 @@ const ProblemForm = () => {
           </Select>
         </FormGroup>
 
-        <Button type="submit">Submit Problem</Button>
+        {error && <ErrorMessage>{error}</ErrorMessage>}
+
+        <Button type="submit" disabled={loading}>
+          {loading ? 'Submitting...' : 'Submit Problem'}
+        </Button>
       </form>
     </FormContainer>
   );
